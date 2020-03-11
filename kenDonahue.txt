@@ -11,42 +11,111 @@
     6. What do we put in the head of our HTML document?
         All information about the document, meta information, scripts, links, etc.
     7. What is an id?
-        It's 
+        It uniquely specifies a single html element.
     8. What elements can I add an id to? 
-    9. How many times can I use the same id on a page? 
-    10. What is a class? 
+        Any html element.
+    9. How many times can I use the same id on a page?
+        Once .
+    10. What is a class?
+        It's an attribute used to identify html elements.
     11. What elements can I add a class to? 
-    12. How many times can I use the same class on a page? 
+        Any html element.
+    12. How many times can I use the same class on a page?\
+        There isn't a limit.
     13. How do I get my link to open in a new tab?
-    14. What is the alt attribute used for? 
+        target="_blank"
+    14. What is the alt attribute used for?
+        To provide information about an image, for accessibility if the element will not display.
     15. How do I reference an id?
+        #idName
     16. What is the difference between a section and a div
+        Section specifies that the information grouped is related. Div doesn't have meaning.
     17. What is CSS used for? 
+        CSS is used for styling html.
     18. How to we select an element? Example - every h2 on the page
+        elementName{}
+            example: h2{}
     19. What is the difference between a class and an id? - Give me an example of when I might use each one
+        A class can be used to target one or many elements, an id is only used to target a single element.
+            Class example: Target a group of images for styling
+                Id example: Target a single image for styling
     20. How do we select classes in CSS?
+        .className
+            example: .images
     21. How do we select a p element with a single class of “human””?
-    22. What is a parent child selector? When would this be useful? 
+        .human p{}
+    22. What is a parent child selector? When would this be useful?
+        It selects all child elements of a parent element. It's useful to style all child elements of a parent, rather than creating classes.
     23. How do you select all links within a div with the class of sidebar?
+        div.sidebar a{}
     24. What is a pseudo selector?
+        It selects a specific state of an element.
+            Example: h2.hover{}
     25. What do we use the change the spacing between lines?
+        line-height:value;
     26. What do we use to change the spacing between letters?
+        letter-spacing:value;
     27. What do we use to to change everything to CAPITALS? lowercase? Capitalize?
+        CAPITALS: text-transform:uppercase;
+            lowercase: text-transform:lowercase;
+                Capitalize: text-transform:capitalize;
+
     28. How do I add a 1px border around my div that is dotted and black?
-    29. How do I select everything on the page? 
+        div{
+            border: 1px dotted black;
+        }
+    29. How do I select everything on the page?
+        *{}
     30. How do I write a comment in CSS?
-    31. How do I find out what file I am in, when I am using the command line? 
+         /* text */
+    31. How do I find out what file I am in, when I am using the command line?
+        $ pwd
     32. Using the command line - how do I see a list of files/folders in my current folder?
+        ls
     33. How do I remove a file via the command line? Why do I have to be careful with this? 
+        rm fileName
+            The action cannot be undone.
     34. Why should I use version control? 
+        It tracks all changes made by contributors, and helps to preserve the main project code.
     35. How often should I commit to github?
+        Once every 20 minutes, and after new items are functional.
     36. What is the command we would use to push our repo up to github? 
+        git push -u origin branchName
     37. Walk me through Lambda's git flow. 
+        1. Fork the repo. 
+        2. Once on my forked copy, add my TL as a contributor.
+        3. Clone the repo, and copy the link.
+        4. In my CLI, cd into the directory where I will store my forked repo.
+        5. git clone repoURL
+        6. cd repoName
+        7. Create my branch: git checkout -b "firstName-lastName"
+        8. Work on files in repo
+        9. Add and commit changes to branch: 
+            git add.
+            git commit -m "message details"
+        10. Push changes to the github repo: git push -u origin branchName
+        11. Submit pull request:
+            1.Go to my forked copy
+            2.Click "Branch:master" and select my branch
+            3.Click "new pull request"
+            4.Click "base repository" and select my forked repo
+            5.Add my TL to "Reviewers"
+            6.Submit the pull request *DO NOT MERGE PULL REQUEST*
 
 Stretch Questions
 
     1. What is the difference between an inline element and a block element?
-    2. What happens when an element is positioned absolutely? 
-    3. How do I make an element take up only the amount of space it needs but also have the ability to give it a width? 
+        Block elements display on a new line and take all available width.
+            Inline elements do not start on new lines and only take as much space as necessary.
+    2. What happens when an element is positioned absolutely?
+        The element is position to the top left corner of its parent element, or top left of the page if it has no parent.
+    3. How do I make an element take up only the amount of space it needs but also have the ability to give it a width?
+        display:inline-block;
     4. Name 3 elements that are diplay block by default, 2 elements that are display inline by default and 1 element that is display inline-block by default
+        Block elements: h1-h6, p, li
+            Inline elements: a, span, img
+                Inline-Block elements: button
     5. In your own words, explain the box model. What is the fix for the box model? 
+        A box that surrounds an html element, and contains the content, padding, border, and margin. It often creates issues with inteded sizing specs, because
+            you have to account for padding, border, and margin size on top of the displayed element. The model does not work well for responsive application.
+                The "fix" is box-sizing:border-box.
